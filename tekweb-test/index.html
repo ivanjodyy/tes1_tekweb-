@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NusaTour — Rancang Paket Liburan Impian Anda</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container">
+      <h1 class="text-center fw-bold">Rancang Paket Liburan Impian Anda</h1>
+      <p class="text-center">
+        Pilih destinasi, akomodasi, dan tambahan untuk membuat paket liburan ke Jawa Timur ✨
+      </p>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <div class="row g-4">
+      <!-- ===== Panel Konfigurasi ===== -->
+      <section class="col-12 col-lg-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h4 mb-3">Panel Konfigurasi</h2>
+
+            <!-- Destinasi -->
+            <div class="mb-4">
+              <h3 class="h6 text-uppercase text-muted">Destinasi (wajib pilih satu)</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="destinasi" id="dest-bromo" value="bromo" />
+                <label class="form-check-label" for="dest-bromo">Bromo (Rp 750.000)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="destinasi" id="dest-ijen" value="ijen" />
+                <label class="form-check-label" for="dest-ijen">Ijen (Rp 950.000)</label>
+              </div>
+            </div>
+
+            <!-- Akomodasi -->
+            <div class="mb-4">
+              <h3 class="h6 text-uppercase text-muted">Tipe Akomodasi (wajib pilih satu)</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="akomodasi" id="ako-home" value="homestay" />
+                <label class="form-check-label" for="ako-home">Homestay (tanpa biaya tambahan)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="akomodasi" id="ako-villa" value="villa" />
+                <label class="form-check-label" for="ako-villa">Villa (+ Rp 400.000)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="akomodasi" id="ako-hotel" value="hotel4" />
+                <label class="form-check-label" for="ako-hotel">Hotel Bintang 4 (+ Rp 800.000)</label>
+              </div>
+            </div>
+
+            <!-- Tambahan -->
+            <div class="mb-4">
+              <h3 class="h6 text-uppercase text-muted">Tambahan (opsional, bisa lebih dari satu)</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="add-jeep" value="jeep" />
+                <label class="form-check-label" for="add-jeep">Sewa Jeep Pribadi (+ Rp 600.000)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="add-doc" value="dokumentasi" />
+                <label class="form-check-label" for="add-doc">Dokumentasi (Drone & Fotografer) (+ Rp 900.000)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="add-dinner" value="dinner" />
+                <label class="form-check-label" for="add-dinner">Makan Malam Spesial di Ketinggian (+ Rp 350.000)</label>
+              </div>
+            </div>
+
+            <!-- Reset -->
+            <div class="d-grid">
+              <button id="btn-reset" class="btn btn-outline-secondary">Reset Pilihan</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Panel Preview ===== -->
+      <section class="col-12 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h4 mb-3">Preview</h2>
+
+            <div class="ratio ratio-16x9 mb-3 rounded overflow-hidden border">
+              <img id="preview-image" src="assets/default.jpg" alt="Preview destinasi" class="w-100 h-100 object-fit-cover"/>
+            </div>
+
+            <h3 class="h6 text-uppercase text-muted">Fitur Paket</h3>
+            <ul id="daftar-fitur" class="mb-0"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Panel Ringkasan Biaya ===== -->
+      <section class="col-12 col-lg-3">
+        <div class="card h-100">
+          <div class="card-body d-flex flex-column">
+            <h2 class="h4 mb-3">Ringkasan Biaya</h2>
+            <div class="small text-muted mb-2">Total biaya dihitung dari Destinasi + Akomodasi + Tambahan.</div>
+            <div class="mt-auto">
+              <h2 id="total-biaya" class="display-6 fw-semibold">Rp 0</h2>
+              <div class="text-muted">Harga belum termasuk kebutuhan pribadi.</div>
+              <button id="btn-bayar" class="btn btn-success w-100 mt-3">Bayar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- jQuery + Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
